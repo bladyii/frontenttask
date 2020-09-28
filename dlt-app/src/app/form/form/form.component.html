@@ -1,0 +1,75 @@
+<header class="masthead bg-primary text-white text-center">
+  <div class="container d-flex align-items-center flex-column">
+    <h1 class="masthead-heading text-uppercase mb-0">ADD COMMENT</h1>
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+  </div>
+</header>
+<section class="news mt-5">
+  <div class="container">
+    <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="name" class="control-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            formControlName="name"
+          />
+          <span
+            class="text-danger"
+            *ngIf="form.controls['name'].errors && form.touched"
+          >
+            Name is required.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="email" class="control-label">Email</label>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            formControlName="email"
+          />
+          <span
+            class="text-danger"
+            *ngIf="form.controls['email'].errors && form.touched"
+          >
+            Valid email is required.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="comment" class="control-label">Comment</label>
+          <textarea
+            type="text"
+            id="comment"
+            class="form-control"
+            formControlName="comment"
+          ></textarea>
+          <span
+            class="text-danger"
+            *ngIf="form.controls['comment'].errors && form.touched"
+          >
+            Comment is required and must not exceede 200 characters.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Add Comment</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

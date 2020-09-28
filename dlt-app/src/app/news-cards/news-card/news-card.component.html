@@ -1,0 +1,23 @@
+<div class="news-item mx-auto mb-2">
+  <div
+    class="news-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+  >
+    <div class="news-item-caption-content text-center text-white">
+      <i class="fas fa-plus fa-3x"></i>
+    </div>
+  </div>
+
+  <div class="p-3 text-white">
+    <h1 class="text-center mb-2">{{ article.title }}</h1>
+    <img
+      class="mb-2"
+      width="100%"
+      height="auto"
+      src="{{ article.imgUrl }}"
+      alt=""
+    />
+    <p class="text-justify">
+      {{ generateShortContent(article) }}
+    </p>
+  </div>
+</div>

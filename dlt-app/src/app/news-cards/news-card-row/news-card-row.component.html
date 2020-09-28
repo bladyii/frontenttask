@@ -1,0 +1,9 @@
+<div class="row bg-secondary" *ngIf="articles">
+  <a app-news-card
+    *ngFor="let item of articles"
+    [article]="item"
+    class="col-md-6 col-lg-4 col-sm-12 col-xs-12"
+    [routerLink]="['/article', item.id]"
+    routerLinkActive="router-link-active" 
+  ></a> 
+</div>

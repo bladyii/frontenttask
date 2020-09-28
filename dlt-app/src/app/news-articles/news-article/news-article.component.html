@@ -1,0 +1,25 @@
+<header class="masthead bg-primary text-white text-center" *ngIf="article">
+  <div class="container d-flex align-items-center flex-column">
+    <h1 class="masthead-heading text-uppercase mb-0">{{ article.title }}</h1>
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+  </div>
+</header>
+<section class="news mt-5 mb-5" *ngIf="article">
+  <div class="container">
+    <div class="mb-3 mt-3">
+      <img src="{{ article.imgUrl }}" alt="" width="100%" height="auto"/>
+    </div>
+    <p class="text-justify">{{ article.content }}</p>
+    <p class="text-justify">{{ article.content }}</p>
+    <p class="text-justify">{{ article.content }}</p>
+    <a 
+    class="btn btn-primary"
+    [routerLink]="['/form', article.id]"
+    routerLinkActive="router-link-active" 
+  >Comment</a> 
+  </div>
+</section>
